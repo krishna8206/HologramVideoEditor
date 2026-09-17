@@ -84,33 +84,33 @@ export default function Navbar() {
               <span className="text-[10px] text-zinc-400 font-medium uppercase tracking-wider hidden md:inline">Credits</span>
             </button>
 
-            {/* Share Button (Desktop/Tablet) */}
+            {/* Share Button (All Viewports) */}
             <button
               onClick={() => setShareModalOpen(true)}
-              className="w-10 h-10 rounded-xl hidden sm:flex items-center justify-center bg-zinc-900/70 hover:bg-zinc-800/90 border border-white/[0.08] hover:border-purple-500/40 text-zinc-300 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_4px_16px_rgba(168,85,247,0.2)] hover:-translate-y-0.5 active:scale-95 relative shrink-0"
+              className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl flex items-center justify-center bg-zinc-900/70 hover:bg-zinc-800/90 border border-white/[0.08] hover:border-purple-500/40 text-zinc-300 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_4px_16px_rgba(168,85,247,0.2)] hover:-translate-y-0.5 active:scale-95 relative shrink-0"
               title="Share platform"
             >
-              <Share2 className="w-4 h-4" />
-              <span className="absolute top-2 right-2 w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_6px_#34d399] ring-2 ring-[#080911]" />
+              <Share2 className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              <span className="absolute top-1.5 right-1.5 sm:top-2 sm:right-2 w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-emerald-400 shadow-[0_0_6px_#34d399] ring-2 ring-[#080911]" />
             </button>
 
-            {/* Notifications Bell (Desktop/Tablet) */}
-            <div className="relative hidden sm:block shrink-0" ref={notifRef}>
+            {/* Notifications Bell (All Viewports) */}
+            <div className="relative shrink-0" ref={notifRef}>
               <button
                 onClick={() => setNotificationsOpen(!notificationsOpen)}
-                className={`w-10 h-10 rounded-xl flex items-center justify-center border transition-all duration-200 shadow-sm hover:-translate-y-0.5 active:scale-95 relative ${
+                className={`w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl flex items-center justify-center border transition-all duration-200 shadow-sm hover:-translate-y-0.5 active:scale-95 relative ${
                   notificationsOpen
                     ? 'bg-purple-600/20 border-purple-500/60 text-purple-300 shadow-[0_0_15px_rgba(168,85,247,0.3)]'
                     : 'bg-zinc-900/70 hover:bg-zinc-800/90 border-white/[0.08] hover:border-purple-500/40 text-zinc-300 hover:text-white hover:shadow-[0_4px_16px_rgba(168,85,247,0.2)]'
                 }`}
                 title="Notifications"
               >
-                <Bell className="w-4 h-4" />
-                <span className="absolute top-2 right-2 w-2 h-2 rounded-full bg-purple-500 shadow-[0_0_6px_#a855f7] ring-2 ring-[#080911]" />
+                <Bell className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                <span className="absolute top-1.5 right-1.5 sm:top-2 sm:right-2 w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-purple-500 shadow-[0_0_6px_#a855f7] ring-2 ring-[#080911]" />
               </button>
 
               {notificationsOpen && (
-                <div className="absolute right-0 mt-3 w-72 p-4 rounded-2xl bg-[#0F121F] border border-purple-500/30 shadow-2xl z-50 animate-fadeIn">
+                <div className="absolute right-0 mt-3 w-72 sm:w-80 max-w-[calc(100vw-24px)] p-3.5 sm:p-4 rounded-2xl bg-[#0F121F] border border-purple-500/30 shadow-2xl z-50 animate-fadeIn">
                   <div className="text-xs font-semibold text-zinc-100 mb-2 pb-2 border-b border-zinc-800 flex items-center justify-between">
                     <span>Platform Notifications</span>
                     <span className="text-[10px] text-purple-400 font-mono">LIVE</span>

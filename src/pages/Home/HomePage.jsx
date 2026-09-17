@@ -85,6 +85,28 @@ export default function HomePage() {
     ? `${currentCategoryObj.name} Video Collection`
     : 'All Video Templates Collection';
 
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+
+  const onTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    if (distance > 50) {
+      setActiveBannerIdx((prev) => (prev + 1) % HOMEPAGE_BANNERS.length);
+    } else if (distance < -50) {
+      setActiveBannerIdx((prev) => (prev - 1 + HOMEPAGE_BANNERS.length) % HOMEPAGE_BANNERS.length);
+    }
+  };
+
   return (
     <div className="pb-6 sm:pb-8 overflow-hidden relative">
       
@@ -130,7 +152,12 @@ export default function HomePage() {
         </div>
 
         {/* 2. DYNAMIC HERO BANNER VIDEO REEL */}
-        <div className="mt-14 relative rounded-3xl overflow-hidden bg-[#0A0C14] border border-indigo-500/30 shadow-[0_20px_60px_rgba(0,0,0,0.9),0_0_40px_rgba(99,102,241,0.15)] aspect-[16/9] sm:aspect-[21/9] max-h-[550px] group">
+        <div
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
+          className="mt-8 sm:mt-14 relative rounded-2xl sm:rounded-3xl overflow-hidden bg-[#0A0C14] border border-indigo-500/30 shadow-[0_20px_60px_rgba(0,0,0,0.9),0_0_40px_rgba(99,102,241,0.15)] min-h-[350px] sm:min-h-[400px] sm:aspect-[21/9] max-h-[550px] group select-none"
+        >
           <video
             key={currentBanner.videoUrl}
             src={currentBanner.videoUrl}
@@ -144,50 +171,50 @@ export default function HomePage() {
           <div className={`absolute inset-0 bg-gradient-to-t ${currentBanner.bgGradient} opacity-90`} />
 
           {/* Banner Content Overlay */}
-          <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-12 z-10">
-            <div className="max-w-xl space-y-3">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gradient-to-r from-cyan-500 to-indigo-600 text-white text-[10px] font-mono font-bold uppercase tracking-wider shadow-md">
+          <div className="absolute inset-0 flex flex-col justify-end p-5 pl-12 pr-12 sm:p-8 sm:pl-16 sm:pr-16 lg:p-12 pb-12 sm:pb-12 z-10">
+            <div className="max-w-xl space-y-2 sm:space-y-3">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gradient-to-r from-cyan-500 to-indigo-600 text-white text-[10px] font-mono font-bold uppercase tracking-wider shadow-md w-fit">
                 {currentBanner.badge}
               </span>
-              <h3 className="text-2xl sm:text-4xl text-white font-semibold leading-tight">
+              <h3 className="text-xl sm:text-3xl lg:text-4xl text-white font-semibold leading-tight">
                 {currentBanner.title}
               </h3>
-              <p className="text-zinc-300 text-xs sm:text-sm font-light line-clamp-2">
+              <p className="text-zinc-300 text-xs sm:text-sm font-light line-clamp-2 max-w-lg">
                 {currentBanner.tagline}
               </p>
-              <div className="pt-2 flex items-center gap-3">
+              <div className="pt-2 flex flex-wrap items-center gap-2.5 sm:gap-3">
                 <Link
                   to={currentBanner.link}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-medium uppercase tracking-wider border border-indigo-400/40 backdrop-blur-md shadow-sm transition-all"
+                  className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-white/15 hover:bg-white/25 text-white text-xs font-semibold uppercase tracking-wider border border-white/20 backdrop-blur-md shadow-sm active:scale-95 transition-all"
                 >
                   <span>{currentBanner.ctaText}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
-                <div className="px-3.5 py-1.5 rounded-full bg-gradient-to-r from-pink-600 to-purple-600 text-white font-mono text-xs font-bold shadow-md">
+                <div className="px-3.5 py-1.5 rounded-full bg-gradient-to-r from-pink-600 to-purple-600 text-white font-mono text-xs font-bold shadow-md shrink-0">
                   Just ₹499
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Slider Prev & Next Navigation Buttons (Lady Luck Style) */}
+          {/* Slider Prev & Next Navigation Buttons */}
           <button
             onClick={() => setActiveBannerIdx((prev) => (prev - 1 + HOMEPAGE_BANNERS.length) % HOMEPAGE_BANNERS.length)}
-            className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center backdrop-blur-md border border-white/20 z-20 transition-all opacity-0 group-hover:opacity-100 shadow-lg"
+            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center backdrop-blur-md border border-white/20 z-20 transition-all opacity-80 sm:opacity-0 sm:group-hover:opacity-100 shadow-lg"
             title="Previous Banner"
           >
-            <ChevronLeft className="w-5 h-5" />
+            <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
           </button>
           <button
             onClick={() => setActiveBannerIdx((prev) => (prev + 1) % HOMEPAGE_BANNERS.length)}
-            className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center backdrop-blur-md border border-white/20 z-20 transition-all opacity-0 group-hover:opacity-100 shadow-lg"
+            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center backdrop-blur-md border border-white/20 z-20 transition-all opacity-80 sm:opacity-0 sm:group-hover:opacity-100 shadow-lg"
             title="Next Banner"
           >
-            <ChevronRight className="w-5 h-5" />
+            <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
           </button>
 
           {/* Carousel Dots */}
-          <div className="absolute bottom-6 right-6 z-20 flex items-center gap-2">
+          <div className="absolute bottom-4 sm:bottom-6 right-4 sm:right-8 z-20 flex items-center gap-1.5 sm:gap-2">
             {HOMEPAGE_BANNERS.map((_, i) => (
               <button
                 key={i}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FAQ_ITEMS } from '../../utils/mockData';
-import { HelpCircle, ChevronDown, Send, CheckCircle2, MessageSquare, ShieldCheck, Sparkles, Mail, FileText } from 'lucide-react';
+import { HelpCircle, ChevronDown, Send, CheckCircle2, MessageSquare, Sparkles } from 'lucide-react';
 
 export default function HelpCenterPage() {
   const [openFaq, setOpenFaq] = useState(0);
@@ -25,37 +25,47 @@ export default function HelpCenterPage() {
   ];
 
   return (
-    <div className="min-h-screen py-10 lg:py-16">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+    <div className="min-h-screen py-6 sm:py-10 lg:py-14">
+      <div className="max-w-6xl mx-auto px-3.5 sm:px-6 lg:px-8 space-y-10 sm:space-y-14">
         
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 border border-amber-400/20 text-amber-400 text-xs font-mono uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-xs font-mono uppercase tracking-wider mb-1">
             <HelpCircle className="w-3.5 h-3.5" /> Support & Knowledge Base
           </div>
-          <h1 className="text-3xl sm:text-4xl font-serif text-zinc-100 font-light">
+          <h1 className="text-2xl sm:text-4xl text-white font-extrabold tracking-tight">
             Help Center & How It Works
           </h1>
-          <p className="text-zinc-400 text-xs sm:text-sm font-light">
+          <p className="text-zinc-400 text-xs sm:text-sm font-light max-w-xl mx-auto">
             Everything you need to know about personalizing video templates, individual licensing, and export specifications.
           </p>
         </div>
 
         {/* How It Works Workflow Grid */}
         <div className="space-y-6">
-          <h2 className="text-xl font-serif text-zinc-100 font-light text-center">
-            How The Studio Works
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="text-center space-y-1.5">
+            <h2 className="text-xl sm:text-2xl text-white font-bold tracking-tight">
+              How The Studio Works
+            </h2>
+            <div className="h-0.5 w-16 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full mx-auto" />
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3.5 sm:gap-4">
             {STEPS.map((step, idx) => (
               <div
                 key={idx}
-                className="p-5 rounded-3xl bg-zinc-900/40 border border-zinc-800/80 hover:border-amber-400/30 transition-all flex flex-col justify-between"
+                className="p-5 sm:p-5 rounded-2xl sm:rounded-3xl bg-zinc-900/40 border border-zinc-800/80 hover:border-indigo-500/40 hover:shadow-[0_8px_25px_rgba(99,102,241,0.15)] transition-all flex flex-col justify-between group"
               >
                 <div>
-                  <div className="font-mono text-xl font-bold text-amber-400 mb-3">{step.num}</div>
-                  <h3 className="font-serif text-sm text-zinc-100 font-medium mb-1.5">{step.title}</h3>
-                  <p className="text-[11px] text-zinc-400 leading-relaxed font-light">{step.desc}</p>
+                  <div className="font-mono text-xl sm:text-2xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent mb-3">
+                    {step.num}
+                  </div>
+                  <h3 className="text-sm text-white font-semibold group-hover:text-indigo-300 transition-colors mb-2">
+                    {step.title}
+                  </h3>
+                  <p className="text-xs text-zinc-400 leading-relaxed font-light">
+                    {step.desc}
+                  </p>
                 </div>
               </div>
             ))}
@@ -64,8 +74,10 @@ export default function HelpCenterPage() {
 
         {/* FAQ Accordion */}
         <div className="space-y-6">
-          <div className="text-center space-y-1">
-            <h2 className="text-2xl font-serif text-zinc-100 font-light">Frequently Asked Questions</h2>
+          <div className="text-center space-y-1.5">
+            <h2 className="text-xl sm:text-2xl text-white font-bold tracking-tight">
+              Frequently Asked Questions
+            </h2>
             <p className="text-xs text-zinc-400">Quick answers to common questions about our platform</p>
           </div>
 
@@ -73,17 +85,17 @@ export default function HelpCenterPage() {
             {FAQ_ITEMS.map((faq, index) => (
               <div
                 key={index}
-                className="rounded-2xl bg-zinc-900/40 border border-zinc-800 overflow-hidden transition-all"
+                className="rounded-2xl bg-zinc-900/40 border border-zinc-800 hover:border-zinc-700/80 overflow-hidden transition-all shadow-sm"
               >
                 <button
                   onClick={() => setOpenFaq(openFaq === index ? -1 : index)}
-                  className="w-full p-5 text-left flex items-center justify-between gap-4 text-sm font-serif text-zinc-200 hover:text-amber-300 transition-colors"
+                  className="w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 text-xs sm:text-sm font-medium text-zinc-200 hover:text-indigo-300 transition-colors"
                 >
-                  <span>{faq.q}</span>
-                  <ChevronDown className={`w-4 h-4 text-amber-400 shrink-0 transition-transform ${openFaq === index ? 'rotate-180' : ''}`} />
+                  <span className="leading-snug">{faq.q}</span>
+                  <ChevronDown className={`w-4 h-4 text-indigo-400 shrink-0 transition-transform duration-200 ${openFaq === index ? 'rotate-180' : ''}`} />
                 </button>
                 {openFaq === index && (
-                  <div className="px-5 pb-5 text-xs text-zinc-400 leading-relaxed border-t border-zinc-800/50 pt-3 font-light animate-fadeIn">
+                  <div className="px-4 sm:px-5 pb-4 sm:pb-5 text-xs text-zinc-400 leading-relaxed border-t border-zinc-800/60 pt-3 font-light animate-fadeIn">
                     {faq.a}
                   </div>
                 )}
@@ -93,80 +105,85 @@ export default function HelpCenterPage() {
         </div>
 
         {/* Contact Support Form */}
-        <div id="contact" className="p-8 sm:p-10 rounded-3xl bg-zinc-900/40 border border-zinc-800 max-w-3xl mx-auto">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 rounded-2xl bg-amber-400/10 text-amber-400 flex items-center justify-center">
+        <div id="contact" className="p-5 sm:p-8 md:p-10 rounded-3xl bg-zinc-900/40 border border-zinc-800 hover:border-indigo-500/30 transition-all max-w-3xl mx-auto shadow-sm">
+          <div className="flex items-center gap-3.5 mb-6">
+            <div className="w-10 h-10 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center shrink-0">
               <MessageSquare className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="font-serif text-xl text-zinc-100 font-light">Contact Studio Support</h3>
-              <p className="text-xs text-zinc-400">Have a custom template request or technical inquiry? Send us a message.</p>
+              <h3 className="text-lg sm:text-xl text-white font-bold tracking-tight">
+                Contact Studio Support
+              </h3>
+              <p className="text-xs text-zinc-400">
+                Have a custom template request or technical inquiry? Send us a message.
+              </p>
             </div>
           </div>
 
           {contactSubmitted ? (
             <div className="py-8 text-center space-y-2 animate-fadeIn">
               <CheckCircle2 className="w-12 h-12 text-emerald-400 mx-auto" />
-              <h4 className="text-lg font-serif text-zinc-100">Message Received</h4>
+              <h4 className="text-lg font-bold text-white">Message Received</h4>
               <p className="text-xs text-zinc-400">Our concierge support team will respond to your registered email shortly.</p>
             </div>
           ) : (
             <form onSubmit={handleContactSubmit} className="space-y-4">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
                 <div>
-                  <label className="block text-[10px] uppercase font-mono tracking-widest text-zinc-400 mb-1.5">Your Name</label>
+                  <label className="block text-[10px] uppercase font-mono tracking-widest text-zinc-400 mb-1.5 font-semibold">Your Name</label>
                   <input
                     type="text"
                     required
                     value={contactForm.name}
                     onChange={(e) => setContactForm({ ...contactForm, name: e.target.value })}
                     placeholder="Alexander Wright"
-                    className="w-full px-4 py-2.5 rounded-xl bg-zinc-950 border border-zinc-800 text-xs text-zinc-100 focus:outline-none focus:border-amber-400/60"
+                    className="w-full px-4 py-2.5 rounded-xl bg-zinc-950 border border-zinc-800 text-xs sm:text-sm text-zinc-100 placeholder-zinc-500 focus:outline-none focus:border-indigo-500 transition-colors"
                   />
                 </div>
                 <div>
-                  <label className="block text-[10px] uppercase font-mono tracking-widest text-zinc-400 mb-1.5">Email Address</label>
+                  <label className="block text-[10px] uppercase font-mono tracking-widest text-zinc-400 mb-1.5 font-semibold">Email Address</label>
                   <input
                     type="email"
                     required
                     value={contactForm.email}
                     onChange={(e) => setContactForm({ ...contactForm, email: e.target.value })}
-                    placeholder="patron@meridian.io"
-                    className="w-full px-4 py-2.5 rounded-xl bg-zinc-950 border border-zinc-800 text-xs text-zinc-100 focus:outline-none focus:border-amber-400/60"
+                    placeholder="creator@hologram.io"
+                    className="w-full px-4 py-2.5 rounded-xl bg-zinc-950 border border-zinc-800 text-xs sm:text-sm text-zinc-100 placeholder-zinc-500 focus:outline-none focus:border-indigo-500 transition-colors"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-[10px] uppercase font-mono tracking-widest text-zinc-400 mb-1.5">Subject</label>
+                <label className="block text-[10px] uppercase font-mono tracking-widest text-zinc-400 mb-1.5 font-semibold">Subject</label>
                 <input
                   type="text"
                   required
                   value={contactForm.subject}
                   onChange={(e) => setContactForm({ ...contactForm, subject: e.target.value })}
                   placeholder="Template licensing / Custom render query"
-                  className="w-full px-4 py-2.5 rounded-xl bg-zinc-950 border border-zinc-800 text-xs text-zinc-100 focus:outline-none focus:border-amber-400/60"
+                  className="w-full px-4 py-2.5 rounded-xl bg-zinc-950 border border-zinc-800 text-xs sm:text-sm text-zinc-100 placeholder-zinc-500 focus:outline-none focus:border-indigo-500 transition-colors"
                 />
               </div>
 
               <div>
-                <label className="block text-[10px] uppercase font-mono tracking-widest text-zinc-400 mb-1.5">Your Message</label>
+                <label className="block text-[10px] uppercase font-mono tracking-widest text-zinc-400 mb-1.5 font-semibold">Your Message</label>
                 <textarea
                   rows={4}
                   required
                   value={contactForm.message}
                   onChange={(e) => setContactForm({ ...contactForm, message: e.target.value })}
                   placeholder="Describe your question in detail..."
-                  className="w-full px-4 py-2.5 rounded-xl bg-zinc-950 border border-zinc-800 text-xs text-zinc-100 focus:outline-none focus:border-amber-400/60"
+                  className="w-full px-4 py-2.5 rounded-xl bg-zinc-950 border border-zinc-800 text-xs sm:text-sm text-zinc-100 placeholder-zinc-500 focus:outline-none focus:border-indigo-500 transition-colors"
                 />
               </div>
 
               <div className="flex justify-end pt-2">
                 <button
                   type="submit"
-                  className="px-6 py-3 rounded-xl bg-gradient-to-r from-amber-400 to-yellow-500 text-obsidian font-semibold text-xs uppercase tracking-wider shadow-gold-subtle hover:opacity-90 transition-all flex items-center gap-2"
+                  className="px-6 py-3 rounded-full bg-gradient-to-r from-indigo-500 via-indigo-600 to-violet-600 hover:from-indigo-400 hover:to-violet-500 text-white font-semibold text-xs uppercase tracking-wider shadow-[0_0_20px_rgba(99,102,241,0.35)] active:scale-95 transition-all flex items-center justify-center gap-2 self-stretch sm:self-auto w-full sm:w-auto"
                 >
-                  <Send className="w-3.5 h-3.5" /> Send Message
+                  <Send className="w-3.5 h-3.5" />
+                  <span>Send Message</span>
                 </button>
               </div>
             </form>
