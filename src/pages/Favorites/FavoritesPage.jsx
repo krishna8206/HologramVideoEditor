@@ -9,26 +9,26 @@ export default function FavoritesPage() {
   const favoriteTemplates = allTemplates.filter((t) => favorites.includes(t.id));
 
   return (
-    <div className="min-h-screen py-10 lg:py-14">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+    <div className="min-h-screen py-6 sm:py-10 lg:py-14">
+      <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 space-y-6 sm:space-y-10">
         
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-zinc-800">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 sm:gap-6 pb-6 sm:pb-8 border-b border-zinc-800">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs font-mono uppercase tracking-wider mb-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs font-mono uppercase tracking-wider mb-2 sm:mb-3">
               <Heart className="w-3.5 h-3.5 fill-rose-400" /> Saved Wishlist
             </div>
-            <h1 className="text-3xl sm:text-4xl text-white font-semibold tracking-tight">
+            <h1 className="text-2xl sm:text-4xl text-white font-extrabold tracking-tight">
               Favorite Templates
             </h1>
-            <p className="text-zinc-400 text-sm font-light mt-1">
+            <p className="text-zinc-400 text-xs sm:text-sm font-light mt-1">
               Your bookmarked animation templates for upcoming campaigns, celebrations, and releases.
             </p>
           </div>
 
           <Link
             to="/templates"
-            className="text-xs uppercase font-mono tracking-wider text-indigo-400 hover:text-indigo-300 transition-colors inline-flex items-center gap-1.5 font-medium"
+            className="text-xs uppercase font-mono tracking-wider text-indigo-400 hover:text-indigo-300 transition-colors inline-flex items-center gap-1.5 font-medium self-start sm:self-auto"
           >
             <ArrowLeft className="w-4 h-4" /> Browse Catalog
           </Link>

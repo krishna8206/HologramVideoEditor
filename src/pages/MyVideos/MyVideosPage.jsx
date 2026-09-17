@@ -46,39 +46,39 @@ export default function MyVideosPage() {
   };
 
   return (
-    <div className="min-h-screen py-10 lg:py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen py-6 sm:py-10 lg:py-14">
+      <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
         {/* Page Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-zinc-800/80 mb-10">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 sm:gap-6 pb-6 sm:pb-8 border-b border-zinc-800/80 mb-6 sm:mb-8">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-xs font-mono uppercase tracking-wider mb-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-xs font-mono uppercase tracking-wider mb-2 sm:mb-3">
               <Film className="w-3.5 h-3.5" /> Private Media Vault
             </div>
-            <h1 className="text-3xl sm:text-4xl text-white font-semibold tracking-tight">
+            <h1 className="text-2xl sm:text-4xl text-white font-extrabold tracking-tight">
               My Personalized Videos
             </h1>
-            <p className="text-zinc-400 text-sm font-light mt-1">
+            <p className="text-zinc-400 text-xs sm:text-sm font-light mt-1">
               Manage, preview, and download your personalized video masters.
             </p>
           </div>
 
           <Link
             to="/templates"
-            className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-gradient-to-r from-indigo-500 via-indigo-600 to-violet-600 hover:from-indigo-400 hover:to-violet-500 text-white font-semibold text-xs tracking-wider uppercase shadow-[0_0_20px_rgba(99,102,241,0.35)] hover:opacity-90 transition-all self-start md:self-auto"
+            className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl sm:rounded-full bg-gradient-to-r from-indigo-500 via-indigo-600 to-violet-600 hover:from-indigo-400 hover:to-violet-500 text-white font-semibold text-xs tracking-wider uppercase shadow-[0_0_20px_rgba(99,102,241,0.35)] active:scale-95 transition-all self-stretch sm:self-auto"
           >
             <PlusCircle className="w-4 h-4" /> Personalize New Video
           </Link>
         </div>
 
         {/* Filters & Search */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-4 mb-6 sm:mb-8">
           {/* Status Filter Tabs */}
-          <div className="flex items-center gap-1 p-1 bg-zinc-900/60 border border-zinc-800 rounded-xl w-full sm:w-auto">
+          <div className="flex items-center gap-1 p-1 bg-zinc-900/60 border border-zinc-800 rounded-xl w-full sm:w-auto overflow-x-auto no-scrollbar">
             {['ALL', 'COMPLETED', 'PROCESSING'].map((status) => (
               <button
                 key={status}
                 onClick={() => setFilterStatus(status)}
-                className={`flex-1 sm:flex-none px-4 py-2 rounded-lg text-xs font-medium tracking-wider uppercase transition-all ${
+                className={`flex-1 sm:flex-none px-3.5 sm:px-4 py-2 rounded-lg text-xs font-medium tracking-wider uppercase whitespace-nowrap transition-all ${
                   filterStatus === status
                     ? 'bg-indigo-950/80 text-indigo-300 shadow-sm border border-indigo-500/50 font-semibold'
                     : 'text-zinc-400 hover:text-zinc-200'

@@ -192,13 +192,13 @@ export default function CustomizePage() {
   const firstImageVal = firstImageField ? contentValues[firstImageField.id] : null;
 
   return (
-    <div className="min-h-screen py-8 lg:py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen py-6 sm:py-10 lg:py-14">
+      <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
         
         {/* Studio Top Control Header */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-zinc-800 mb-8">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 sm:pb-6 border-b border-zinc-800 mb-6 sm:mb-8">
           <div>
-            <div className="flex items-center gap-2 mb-1">
+            <div className="flex items-center gap-2 mb-1 flex-wrap">
               <Link
                 to={`/templates/${template.id}`}
                 className="text-zinc-400 hover:text-indigo-400 text-xs font-mono uppercase tracking-widest inline-flex items-center gap-1"

@@ -595,7 +595,7 @@ export default function HomePage() {
             <div className="text-center space-y-2">
               <span className="text-3xl">✨</span>
               <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-                How AuraVideo Works ✨
+                How Hologram Works ✨
               </h3>
               <p className="text-xs text-zinc-400">
                 Personalize and render broadcast-grade motion templates in 3 effortless steps.
@@ -655,7 +655,7 @@ export default function HomePage() {
               <span className="w-2 h-2 rounded-full bg-pink-400 animate-bounce" style={{ animationDelay: '150ms' }} />
               <span className="w-2 h-2 rounded-full bg-cyan-400 animate-bounce" style={{ animationDelay: '300ms' }} />
             </div>
-            <h2 className="text-xl font-bold text-white tracking-tight">AuraVideo</h2>
+            <h2 className="text-xl font-bold text-white tracking-tight">Hologram</h2>
             <p className="text-xs text-zinc-400 font-light tracking-wide">Curating your cinema motion collection...</p>
           </div>
         </div>

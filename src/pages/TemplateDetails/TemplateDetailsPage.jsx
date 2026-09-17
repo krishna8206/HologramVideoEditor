@@ -105,11 +105,11 @@ export default function TemplateDetailsPage() {
   const favorited = isFavorite(template.id);
 
   return (
-    <div className="min-h-screen py-10 lg:py-14">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen py-6 sm:py-10 lg:py-14">
+      <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
         
         {/* Navigation Breadcrumbs */}
-        <div className="flex items-center justify-between gap-4 mb-8">
+        <div className="flex items-center justify-between gap-4 mb-4 sm:mb-8">
           <Link
             to="/templates"
             className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-zinc-400 hover:text-indigo-400 transition-colors"
@@ -125,11 +125,11 @@ export default function TemplateDetailsPage() {
         </div>
 
         {/* 2-Column Hero: Video Preview + Details & Specs */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10 lg:gap-14 mb-10 sm:mb-16">
           
           {/* Left Column: Large Video Player Viewport */}
-          <div className="lg:col-span-7 space-y-4">
-            <div className="relative aspect-[16/10] sm:aspect-video rounded-3xl overflow-hidden bg-black border border-indigo-500/20 shadow-2xl group">
+          <div className="lg:col-span-7 space-y-3.5 sm:space-y-4">
+            <div className="relative aspect-[16/10] sm:aspect-video rounded-2xl sm:rounded-3xl overflow-hidden bg-black border border-indigo-500/20 shadow-2xl group max-h-[60vh] sm:max-h-[70vh]">
               <video
                 ref={videoRef}
                 src={template.videoUrl}

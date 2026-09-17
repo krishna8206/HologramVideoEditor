@@ -41,7 +41,7 @@ export default function LoginPage() {
             </div>
           </div>
           <h1 className="text-3xl font-serif font-light text-zinc-100 tracking-tight">
-            Welcome to AuraVideo
+            Welcome to Hologram
           </h1>
           <p className="text-zinc-400 text-xs sm:text-sm font-light mt-1">
             Access your private salon and personalize cinema-grade videos

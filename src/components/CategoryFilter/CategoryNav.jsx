@@ -44,7 +44,7 @@ export default function CategoryNav() {
 
       {/* 2. SUBCATEGORY PILLS */}
       {currentCategoryObj && currentCategoryObj.subcategories?.length > 0 && (
-        <div className="flex items-center gap-2 overflow-x-auto pb-1 pl-0.5 animate-fadeIn">
+        <div className="flex items-center gap-2 overflow-x-auto pb-1 pl-0.5 scrollbar-none animate-fadeIn">
           <button
             onClick={() => setActiveSubcategory('all')}
             className={`px-3.5 py-1.5 rounded-full text-[11px] font-medium whitespace-nowrap transition-all duration-200 ${

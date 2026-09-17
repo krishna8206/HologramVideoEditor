@@ -266,9 +266,9 @@ export default function ProfilePage() {
         </div>
 
         {/* ======================================================== */}
-        {/* 2. PROMOTIONAL BANNER ("How AuraVideo Works") */}
+        {/* 2. PROMOTIONAL BANNER ("How Hologram Works") */}
         {/* ======================================================== */}
-        <div className="p-4 sm:p-5 rounded-3xl bg-gradient-to-r from-[#5B1E4A] via-[#3E1656] to-[#1C1448] border border-fuchsia-500/40 shadow-[0_10px_30px_rgba(168,85,247,0.25)] flex items-center justify-between gap-3.5 relative overflow-hidden">
+        <div className="p-4 sm:p-5 rounded-3xl bg-gradient-to-r from-[#5B1E4A] via-[#3E1656] to-[#1C1448] border border-fuchsia-500/40 shadow-[0_10px_30px_rgba(168,85,247,0.25)] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3.5 relative overflow-hidden">
           
           {/* Shimmer Highlight Line */}
           <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-pink-400/50 to-transparent" />
@@ -278,7 +278,7 @@ export default function ProfilePage() {
               🎁 EARN FREE CREDITS
             </span>
             <h3 className="text-sm sm:text-base font-extrabold text-white flex items-center gap-1.5 tracking-tight">
-              How AuraVideo Works <Sparkles className="w-4 h-4 text-yellow-300 animate-pulse" />
+              How Hologram Works <Sparkles className="w-4 h-4 text-yellow-300 animate-pulse" />
             </h3>
             <p className="text-[11px] text-pink-100/80 font-normal leading-snug max-w-sm sm:max-w-md">
               Read quick guide on templates, personalization & instant 4K renders.
@@ -287,7 +287,7 @@ export default function ProfilePage() {
 
           <button
             onClick={() => setGuideModalOpen(true)}
-            className="z-10 px-4 py-2.5 rounded-full bg-white hover:bg-zinc-100 text-zinc-950 font-bold text-xs whitespace-nowrap shadow-[0_4px_16px_rgba(255,255,255,0.3)] hover:shadow-[0_6px_22px_rgba(255,255,255,0.4)] hover:scale-105 active:scale-95 transition-all shrink-0 flex items-center gap-1.5"
+            className="z-10 px-4 py-2.5 rounded-full bg-white hover:bg-zinc-100 text-zinc-950 font-bold text-xs whitespace-nowrap shadow-[0_4px_16px_rgba(255,255,255,0.3)] hover:shadow-[0_6px_22px_rgba(255,255,255,0.4)] hover:scale-105 active:scale-95 transition-all shrink-0 self-end sm:self-auto flex items-center gap-1.5"
           >
             Read Guide 📜
           </button>
@@ -463,7 +463,7 @@ export default function ProfilePage() {
                 </div>
                 <div className="min-w-0">
                   <div className="text-sm font-bold text-white group-hover:text-fuchsia-300 transition-colors">
-                    Install AuraVideo App
+                    Install Hologram App
                   </div>
                   <p className="text-[11px] text-zinc-400 truncate mt-0.5">
                     Add to home screen for full-screen experience
@@ -512,7 +512,7 @@ export default function ProfilePage() {
 
             {/* WhatsApp Support */}
             <a
-              href="https://wa.me/919875270319?text=Hi%20AuraVideo%20Team%2C%20I%20need%20help%20with%20video%20templates"
+              href="https://wa.me/919875270319?text=Hi%20Hologram%20Team%2C%20I%20need%20help%20with%20video%20templates"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3.5 sm:p-4 rounded-2xl bg-gradient-to-b from-[#13172B]/95 to-[#0E111F]/95 border border-white/10 hover:border-emerald-500/40 transition-all duration-200 flex items-center justify-between gap-3 cursor-pointer shadow-[0_4px_18px_rgba(0,0,0,0.35)] group active:scale-[0.99]"
@@ -564,7 +564,7 @@ export default function ProfilePage() {
         {/* 8. FOOTER VERSION INFO */}
         <div className="text-center pt-2 pb-2">
           <p className="text-[11px] font-mono text-zinc-500">
-            AuraVideo v1.2.4 • Cinema-Grade Personalization Platform
+            Hologram Studio Suite • Cinema-Grade Personalization Platform
           </p>
         </div>
 
@@ -589,7 +589,7 @@ export default function ProfilePage() {
               <div className="flex items-center gap-2.5">
                 <span className="text-xl">🎁</span>
                 <h3 className="text-base font-extrabold text-white tracking-tight">
-                  How AuraVideo Works
+                  How Hologram Works
                 </h3>
               </div>
               <button
@@ -779,7 +779,7 @@ export default function ProfilePage() {
             </div>
 
             <p className="text-zinc-300 leading-relaxed text-xs">
-              Add AuraVideo to your home screen to launch in full-screen mode like a native app!
+              Add Hologram to your home screen to launch in full-screen mode like a native app!
             </p>
 
             <div className="space-y-3 pt-1">
