@@ -1,0 +1,76 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        gold: {
+          50: '#EEF2FF',
+          100: '#E0E7FF',
+          200: '#C7D2FE',
+          300: '#A5B4FC',
+          400: '#818CF8',
+          500: '#6366F1',
+          600: '#4F46E5',
+          700: '#4338CA',
+          800: '#3730A3',
+          900: '#312E81',
+        },
+        brand: {
+          50: '#EEF2FF',
+          100: '#E0E7FF',
+          200: '#C7D2FE',
+          300: '#A5B4FC',
+          400: '#818CF8',
+          500: '#6366F1',
+          600: '#4F46E5',
+          700: '#4338CA',
+          800: '#3730A3',
+          900: '#312E81',
+        },
+        studio: {
+          950: '#07080E',
+          900: '#0B0E17',
+          850: '#101422',
+          800: '#161B2E',
+          750: '#1D233C',
+          700: '#262E4E',
+          600: '#394473',
+          500: '#53619F',
+        },
+        obsidian: {
+          950: '#07080E',
+          900: '#0B0E17',
+          850: '#101422',
+          800: '#161B2E',
+          750: '#1D233C',
+          700: '#262E4E',
+          600: '#394473',
+        },
+      },
+      fontFamily: {
+        sans: ['"Segoe UI"', '-apple-system', 'BlinkMacSystemFont', 'Roboto', 'sans-serif'],
+        serif: ['"Segoe UI"', '-apple-system', 'BlinkMacSystemFont', 'Roboto', 'sans-serif'],
+        mono: ['"Segoe UI"', 'JetBrains Mono', 'monospace'],
+      },
+      backgroundImage: {
+        'gold-gradient': 'linear-gradient(135deg, #6366F1 0%, #8B5CF6 50%, #EC4899 100%)',
+        'brand-gradient': 'linear-gradient(135deg, #6366F1 0%, #8B5CF6 50%, #EC4899 100%)',
+        'cyan-indigo': 'linear-gradient(135deg, #06B6D4 0%, #6366F1 60%, #8B5CF6 100%)',
+        'gold-shimmer': 'linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.15), transparent)',
+        'luxury-glow': 'radial-gradient(ellipse 70% 50% at 50% -10%, rgba(99, 102, 241, 0.22), rgba(168, 85, 247, 0.12) 45%, transparent 75%)',
+        'studio-spotlight': 'radial-gradient(ellipse 65% 45% at 50% 0%, rgba(99, 102, 241, 0.25), rgba(139, 92, 246, 0.12) 45%, transparent 75%)',
+      },
+      boxShadow: {
+        'gold-subtle': '0 4px 20px -2px rgba(99, 102, 241, 0.25)',
+        'gold-glow': '0 0 30px rgba(99, 102, 241, 0.4)',
+        'brand-glow': '0 0 25px rgba(99, 102, 241, 0.4)',
+        'card-elevated': '0 10px 30px -5px rgba(0, 0, 0, 0.6), 0 0 1px 1px rgba(255, 255, 255, 0.06)',
+      },
+    },
+  },
+  plugins: [],
+}
